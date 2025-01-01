@@ -1,0 +1,74 @@
+/* Global Styles for the Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px; /* Spacing between menu items */
+  }
+  
+  nav ul li {
+    position: relative; /* For dropdown positioning */
+  }
+  
+  nav a {
+    color: #000; /* Set the text color */
+    font-family: 'Arial', sans-serif; /* Set the font */
+    font-size: 16px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add padding for spacing */
+    display: block;
+    border: 1px solid transparent; /* Transparent border for spacing */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  /* Hover effects */
+  nav a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #f1a7a2; /* Background color on hover */
+    border-color: #f1a7a2; /* Border color on hover */
+  }
+  
+  /* Dropdown Menu */
+  nav li ul {
+    display: none; /* Initially hide the dropdown */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav li:hover ul {
+    display: block; /* Show dropdown on hover */
+  }
+  
+  nav li ul li {
+    width: 200px; /* Set a fixed width for dropdown items */
+  }
+  
+  nav li ul li a {
+    padding: 10px 15px; /* Padding for dropdown items */
+    color: #000;
+    border-top: 1px solid #eee;
+  }
+  
+  /* Hover effect for dropdown items */
+  nav li ul li a:hover {
+    background-color: #f1a7a2;
+    color: #fff;
+  }
+  
+  /* Active link styling */
+  nav a.active {
+    color: #fff;
+    background-color: #f1a7a2;
+    border-color: #f1a7a2;
+  }
