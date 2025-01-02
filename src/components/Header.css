@@ -72,3 +72,11 @@ nav {
     background-color: #f1a7a2;
     border-color: #f1a7a2;
   }
+
+  .position-absolute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }

@@ -7,6 +7,7 @@ import CraftHobby from './pages/CraftHobby';
 import PatternsPrints from './pages/PatternsPrints';
 import DesignDetails from './pages/DesignDetails';
 import NotFound from './pages/NotFound';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 

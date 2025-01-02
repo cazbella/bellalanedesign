@@ -1,41 +1,77 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Make sure the CSS is correctly imported
+import { Navbar, Nav } from 'react-bootstrap';
+import './Header.css';
+import FullLogo from '../assets/images/full_logo.png'; 
+
 
 function Header() {
   return (
-    <div id="header" className="header-container">
-      <div className="header-background">
-        <div className="header-logo" style={{ opacity: 0.6 }}>
-          <img 
-            className="logo-image"
-            data-src="//static.showit.co/1600/6DgNl2VNQFSdjYasPf454w/78449/verf_foto.png"
-            src="//static.showit.co/1600/6DgNl2VNQFSdjYasPf454w/78449/verf_foto.png"
-            alt="Logo" 
-            width="1200" 
-            height="1200" 
-            style={{ width: '1185px', height: '494px', inset: '0px auto auto' }} 
+    <header className="position-relative header-container">
+      {/* Background Image */}
+      <div
+        className="header-background position-relative"
+        style={{
+          backgroundImage: `url('/path-to-your-background-image.jpg')`, // Replace with actual path
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '500px', // Adjust as needed
+        }}
+      >
+        {/* Logo on Top */}
+        <div className="position-absolute top-50 start-50 translate-middle">
+          <img
+            src= {FullLogo}
+            alt="Logo"
+            className="header-logo img-fluid"
+            style={{
+              width: '80%',
+              maxWidth: '600px', // Optional max width for larger screens
+              opacity: 0.8,
+            }}
           />
         </div>
       </div>
-      <div id="header-view" className="header-view-active">
-        <h1 className="header-title">Surface Pattern Design</h1>
-        {/* Navigation Links */}
-        <nav>
-          <ul className="nav-list">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li className="nav-item">
-              <Link to="/designs" className="nav-link">Designs</Link>
-              <ul className="dropdown-list">
-                <li><Link to="/designs/craft-hobby" className="dropdown-link">Craft & Hobby</Link></li>
-                <li><Link to="/designs/patterns-prints" className="dropdown-link">Patterns & Prints</Link></li>
-              </ul>
-            </li>
-            <li><Link to="#contact-1" className="nav-link">Contact</Link></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+
+      {/* Navbar */}
+      <Navbar bg="light" expand="lg" className="py-3">
+        <div className="container">
+          <Navbar.Brand as={Link} to="/">
+            Surface Pattern Design
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav className="dropdown">
+                <Nav.Link
+                  as={Link}
+                  to="/designs"
+                  className="dropdown-toggle"
+                  id="designs-dropdown"
+                  data-bs-toggle="dropdown"
+                >
+                  Designs
+                </Nav.Link>
+                <div className="dropdown-menu" aria-labelledby="designs-dropdown">
+                  <Nav.Link as={Link} to="/designs/craft-hobby" className="dropdown-item">
+                    Craft & Hobby
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/designs/patterns-prints" className="dropdown-item">
+                    Patterns & Prints
+                  </Nav.Link>
+                </div>
+              </Nav>
+              <Nav.Link as={Link} to="#contact-1">
+                Contact
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </div>
+      </Navbar>
+    </header>
   );
 }
 
